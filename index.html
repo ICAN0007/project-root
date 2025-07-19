@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <button class="home-icon" onclick="location.href='index.html'"><img src="assets/home.svg" alt="Home"></button>
+    <button id="menuBtn">☰</button>
+    <a href="https://t.me/yourchannel" class="telegram-icon"><img src="assets/telegram.svg" alt="Telegram"></a>
+  </header>
+  <nav id="menu" class="menu">
+    <a href="index.html">Home</a>
+    <a href="#" onclick="showCategories()">Categories</a>
+    <a href="#" onclick="showTags()">Tags</a>
+    <a href="terms.html">Terms</a>
+    <a href="privacy.html">Privacy Policy</a>
+  </nav>
+
+  <main>
+    <input type="text" id="searchBar" placeholder="Search videos...">
+    <section id="videoGrid" class="grid"></section>
+    <div class="pagination">
+      <button id="prevPage">Prev</button>
+      <span id="pageInfo"></span>
+      <button id="nextPage">Next</button>
+    </div>
+  </main>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
