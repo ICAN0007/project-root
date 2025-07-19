@@ -2,15 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Video Player</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <button class="home-icon" onclick="location.href='index.html'"><img src="assets/home.svg" alt="Home"></button>
+    <button class="home-icon" onclick="location.href='index.html'">
+      <img src="assets/home.svg" alt="Home">
+    </button>
     <button id="menuBtn">☰</button>
-    <a href="https://t.me/yourchannel" class="telegram-icon"><img src="assets/telegram.svg" alt="Telegram"></a>
+    <a href="https://t.me/yourchannel" class="telegram-icon">
+      <img src="assets/telegram.svg" alt="Telegram">
+    </a>
   </header>
   <nav id="menu" class="menu">
     <a href="index.html">Home</a>
@@ -19,13 +23,11 @@
     <a href="terms.html">Terms</a>
     <a href="privacy.html">Privacy Policy</a>
   </nav>
-
   <main>
     <div id="videoPlayer"></div>
     <h3>Related Videos</h3>
     <section id="relatedVideos" class="grid"></section>
   </main>
-
   <script src="video.js"></script>
 </body>
 </html>
