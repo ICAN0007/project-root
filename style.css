@@ -1,88 +1,24 @@
-body {
-  margin: 0;
-  background: #0f0f12;
-  color: #fff;
-  font-family: Arial, sans-serif;
+body { background-color: #000; color: #fff; font-family: sans-serif; }
+a { text-decoration: none; color: inherit; }
+.container { width: 100%; max-width: 1200px; margin: 0 auto; }
+.grid { display: grid; gap: 1rem; }
+.grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 768px) {
+  .md\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
 }
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #1a1a1d;
-  padding: 10px;
-}
-header button, header a {
-  background: none;
-  border: none;
-  margin: 0 10px;
-  cursor: pointer;
-}
-#searchBar {
-  width: 90%;
-  margin: 10px auto;
-  display: block;
-  padding: 10px;
-  border-radius: 8px;
-  border: none;
-  font-size: 16px;
-}
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 10px;
-  padding: 10px;
-}
-.card {
-  background: #2a2a2d;
-  border-radius: 8px;
-  overflow: hidden;
-  cursor: pointer;
-  text-align: center;
-}
-.card img {
-  width: 100%;
-  height: auto;
-}
-.card h4 {
-  padding: 5px;
-  font-size: 14px;
-  word-wrap: break-word;
-}
-.pagination {
-  text-align: center;
-  padding: 10px;
-}
-.pagination button {
-  padding: 8px 15px;
-  margin: 5px;
-  border: none;
-  border-radius: 5px;
-  background: #3a3a3d;
-  color: white;
-  font-size: 14px;
-  cursor: pointer;
-}
-.menu {
-  display: none;
-  flex-direction: column;
-  background: #2a2a2d;
-  position: absolute;
-  top: 50px;
-  left: 0;
-  width: 70%;
-  max-width: 250px;
-  z-index: 100;
-}
-.menu a {
-  padding: 10px;
-  text-decoration: none;
-  color: #fff;
-  border-bottom: 1px solid #444;
-}
-.menu a:hover {
-  background: #3a3a3d;
-}
-video {
-  max-width: 100%;
-  height: auto;
-}
+.bg-gray-800 { background-color: #1f2937; }
+.rounded { border-radius: 0.25rem; }
+.p-4 { padding: 1rem; }
+.p-2 { padding: 0.5rem; }
+.mt-6 { margin-top: 1.5rem; }
+.text-sm { font-size: 0.875rem; }
+.font-bold { font-weight: bold; }
+.text-xs { font-size: 0.75rem; color: #9ca3af; }
+.h-40 { height: 10rem; }
+.w-full { width: 100%; }
+.object-cover { object-fit: cover; }
+.text-3xl { font-size: 1.875rem; margin-bottom: 1rem; }
+.fixed { position: fixed; }
+.top-0 { top: 0; }
+.w-full { width: 100%; }
+.z-50 { z-index: 50; }
