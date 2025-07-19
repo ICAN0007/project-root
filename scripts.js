@@ -1,57 +1,45 @@
-let currentPage = 1;
-const perPage = 10;
-let videos = [];
-
-async function loadVideos() {
-  const res = await fetch('videos.json');
-  videos = await res.json();
-  videos.sort((a, b) => new Date(b.addedAt) - new Date(a.addedAt));
-  renderVideos();
-}
-
-function renderVideos() {
-  const start = (currentPage - 1) * perPage;
-  const end = start + perPage;
-  const pageVideos = videos.slice(start, end);
-  const grid = document.getElementById('videoGrid');
-  grid.innerHTML = pageVideos.map(v => `
-    <div class="card" onclick="location.href='video.html?id=${v.id}'">
-      <img src="${v.thumb}" alt="${v.title}">
-      <h4>${v.title}</h4>
-    </div>
-  `).join('');
-  document.getElementById('pageInfo').innerText = `Page ${currentPage}`;
-}
-
-document.getElementById('nextPage').addEventListener('click', () => {
-  if (currentPage * perPage < videos.length) {
-    currentPage++;
-    renderVideos();
+// Sample video data (your JSON)
+const videos = [
+  {
+    "id": "v1",
+    "title": "Sample Video 1",
+    "categories": ["viral"],
+    "tags": ["funny"],
+    "src": "https://files.catbox.moe/l2524k.mp4",
+    "thumb": "https://files.catbox.moe/77z1vd.png",
+    "duration": 200,
+    "addedAt": "2025-07-19T09:00:00Z"
+  },
+  {
+    "id": "v2",
+    "title": "Sample Video 2",
+    "categories": ["latest"],
+    "tags": ["trending"],
+    "src": "https://files.catbox.moe/6qzodz.mp4",
+    "thumb": "https://files.catbox.moe/ubwr6d.png",
+    "duration": 250,
+    "addedAt": "2025-07-18T09:00:00Z"
   }
-});
+];
 
-document.getElementById('prevPage').addEventListener('click', () => {
-  if (currentPage > 1) {
-    currentPage--;
-    renderVideos();
-  }
-});
+// Sort videos by date (newest first)
+videos.sort((a, b) => new Date(b.addedAt) - new Date(a.addedAt));
 
-document.getElementById('searchBar').addEventListener('input', (e) => {
-  const term = e.target.value.toLowerCase();
-  const filtered = videos.filter(v => v.title.toLowerCase().includes(term));
-  const grid = document.getElementById('videoGrid');
-  grid.innerHTML = filtered.map(v => `
-    <div class="card" onclick="location.href='video.html?id=${v.id}'">
-      <img src="${v.thumb}" alt="${v.title}">
-      <h4>${v.title}</h4>
-    </div>
-  `).join('');
-});
+const videoGrid = document.getElementById('video-grid');
 
-document.getElementById('menuBtn').addEventListener('click', () => {
-  const menu = document.getElementById('menu');
-  menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
-});
+// Render videos
+videos.forEach(video => {
+  const videoCard = document.createElement('div');
+  videoCard.className = 'bg-gray-900 rounded overflow-hidden shadow hover:shadow-lg transition';
 
-loadVideos();
+  videoCard.innerHTML = `
+    <a href="${video.src}" target="_blank">
+      <img src="${video.thumb}" alt="${video.title}" class="w-full h-40 object-cover">
+      <div class="p-2">
+        <h3 class="text-sm font-bold truncate">${video.title}</h3>
+        <p class="text-xs text-gray-400">${video.categories.join(', ')}</p>
+      </div>
+    </a>
+  `;
+  videoGrid.appendChild(videoCard);
+});
