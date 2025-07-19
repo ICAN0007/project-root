@@ -1,0 +1,22 @@
+[
+  {
+    "id": "v1",
+    "title": "Sample Video 1",
+    "categories": ["viral"],
+    "tags": ["funny"],
+    "src": "https://your-cloud-url/video1.mp4",
+    "thumb": "https://your-cloud-url/thumb1.jpg",
+    "duration": 200,
+    "addedAt": "2025-07-19T09:00:00Z"
+  },
+  {
+    "id": "v2",
+    "title": "Sample Video 2",
+    "categories": ["latest"],
+    "tags": ["trending"],
+    "src": "https://your-cloud-url/video2.mp4",
+    "thumb": "https://your-cloud-url/thumb2.jpg",
+    "duration": 250,
+    "addedAt": "2025-07-18T09:00:00Z"
+  }
+]
