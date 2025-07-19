@@ -1,37 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Video Hub</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <button class="home-icon" onclick="location.href='index.html'">
-      <img src="assets/home.svg" alt="Home">
-    </button>
-    <button id="menuBtn">☰</button>
-    <a href="https://t.me/yourchannel" class="telegram-icon">
-      <img src="assets/telegram.svg" alt="Telegram">
-    </a>
-  </header>
-  <nav id="menu" class="menu">
-    <a href="index.html">Home</a>
-    <a href="#" onclick="showCategories()">Categories</a>
-    <a href="#" onclick="showTags()">Tags</a>
-    <a href="terms.html">Terms</a>
-    <a href="privacy.html">Privacy Policy</a>
-  </nav>
-  <main>
-    <input type="text" id="searchBar" placeholder="Search videos...">
-    <section id="videoGrid" class="grid"></section>
-    <div class="pagination">
-      <button id="prevPage">Prev</button>
-      <span id="pageInfo"></span>
-      <button id="nextPage">Next</button>
+<section id="main-content" class="pt-20 py-10">
+    <div class="container mx-auto px-4">
+        <h2 id="page-title" class="text-3xl font-bold mb-6">Latest Videos</h2>
+        <div id="content-area" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+        <div id="related-videos" class="mt-6 hidden">
+            <h3 class="text-2xl font-bold mb-4">Related Videos</h3>
+            <div id="related-videos-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+        </div>
+        <div id="pagination" class="flex justify-center mt-6 space-x-2"></div>
     </div>
-  </main>
-  <script src="scripts.js"></script>
-</body>
-</html>
+</section>
+
+<section id="categories" class="py-10 bg-gray-800">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-6">Categories</h2>
+        <div id="category-list" class="flex flex-wrap gap-4"></div>
+    </div>
+</section>
+
+<section id="hashtags" class="py-10">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-6">Hashtags</h2>
+        <div id="hashtag-list" class="flex flex-wrap gap-3"></div>
+    </div>
+</section>
+
+<footer class="bg-black text-white py-6">
+    <div class="container mx-auto px-4 text-center">
+        <p>© 2025 ExclusiveClips4. All rights reserved.</p>
+        <div class="mt-2">
+            <a href="https://t.me/exclusiveclips4" class="hover:text-blue-400 mx-2">
+                <i class="fab fa-telegram-plane"></i> Join us on Telegram
+            </a>
+            <a href="privacy.html" class="hover:text-blue-400 mx-2">Privacy Policy</a>
+            <a href="terms.html" class="hover:text-blue-400 mx-2">Terms & Conditions</a>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
