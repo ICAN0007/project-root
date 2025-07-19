@@ -7,6 +7,7 @@ body {
 header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   background: #1a1a1d;
   padding: 10px;
 }
@@ -16,11 +17,20 @@ header button, header a {
   margin: 0 10px;
   cursor: pointer;
 }
+#searchBar {
+  width: 90%;
+  margin: 10px auto;
+  display: block;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+}
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 15px;
-  padding: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+  padding: 10px;
 }
 .card {
   background: #2a2a2d;
@@ -33,9 +43,24 @@ header button, header a {
   width: 100%;
   height: auto;
 }
+.card h4 {
+  padding: 5px;
+  font-size: 14px;
+  word-wrap: break-word;
+}
 .pagination {
   text-align: center;
   padding: 10px;
+}
+.pagination button {
+  padding: 8px 15px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  background: #3a3a3d;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
 }
 .menu {
   display: none;
@@ -44,13 +69,20 @@ header button, header a {
   position: absolute;
   top: 50px;
   left: 0;
-  width: 200px;
+  width: 70%;
+  max-width: 250px;
+  z-index: 100;
 }
 .menu a {
   padding: 10px;
   text-decoration: none;
   color: #fff;
+  border-bottom: 1px solid #444;
 }
 .menu a:hover {
   background: #3a3a3d;
+}
+video {
+  max-width: 100%;
+  height: auto;
 }
